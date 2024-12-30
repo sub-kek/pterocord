@@ -1,6 +1,7 @@
 import {PtcordManager} from "./ptcordManager";
-import {BotManager} from "./discord/BotManager";
+import {BotManager} from "./discord/botManager";
 import {config as botConfig} from "./config/botConfig";
+import {PteroManager} from "./ptero/pteroManager";
 
 class Ptcord {
   private readonly managers: Array<PtcordManager>;
@@ -9,8 +10,9 @@ class Ptcord {
   constructor() {
     this.botManager = new BotManager();
 
-    this.managers = [];
+    this.managers = new Array<PtcordManager>();
     this.managers.push(this.botManager);
+    this.managers.push(new PteroManager());
   }
 
   start(): void {

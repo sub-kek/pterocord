@@ -2,6 +2,7 @@ import {Client, CommandInteraction} from 'discord.js';
 import {PingCommand} from './impl/pingCommand';
 import {PtcordCommand} from './ptcordCommand';
 import {language} from "../../config/botConfig";
+import {GetServersCommand} from "./impl/getServersCommand";
 
 export class CommandHandler {
   private client: Client;
@@ -12,6 +13,7 @@ export class CommandHandler {
     this.commands = new Array<PtcordCommand>();
 
     this.commands.push(new PingCommand());
+    this.commands.push(new GetServersCommand());
   }
 
   // Регистрация команд на старте
