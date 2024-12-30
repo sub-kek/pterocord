@@ -1,4 +1,4 @@
-import {SlashCommandBuilder, CommandInteraction} from "discord.js";
+import {CommandInteraction, SlashCommandBuilder} from "discord.js";
 import {PtcordCommand} from "../ptcordCommand";
 import {language} from "../../../config/botConfig";
 import {PtcordEmbed} from "../../utils/ptcordEmbed";
@@ -18,7 +18,7 @@ export class PingCommand implements PtcordCommand {
         .setDescription(this.getDescription());
   }
 
-  private readonly embed= new PtcordEmbed();
+  private readonly embed = new PtcordEmbed();
 
   async execute(interaction: CommandInteraction): Promise<void> {
     const time = Date.now();

@@ -1,5 +1,5 @@
 import {PtcordManager} from "../ptcordManager";
-import {Client, GatewayIntentBits, GatewayIntentsString, IntentsBitField} from "discord.js";
+import {Client, GatewayIntentBits} from "discord.js";
 import {CommandHandler} from "./command/commandHandler";
 
 export class BotManager implements PtcordManager {
@@ -20,8 +20,8 @@ export class BotManager implements PtcordManager {
   enable(): void {
     this.client.on('ready', async () => {
       console.log(`Logged in as ${this.client.user?.tag}!`);
-      await this.commandHandler.registerCommands()
-    })
+      await this.commandHandler.registerCommands();
+    });
 
     this.client.on('interactionCreate', async (interaction) => {
       if (interaction.isCommand()) {

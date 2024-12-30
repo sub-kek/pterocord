@@ -1,7 +1,7 @@
-import { Client, CommandInteraction } from 'discord.js';
-import { PingCommand } from './impl/pingCommand';
-import { PtcordCommand } from './ptcordCommand';
-import { language } from "../../config/botConfig";
+import {Client, CommandInteraction} from 'discord.js';
+import {PingCommand} from './impl/pingCommand';
+import {PtcordCommand} from './ptcordCommand';
+import {language} from "../../config/botConfig";
 
 export class CommandHandler {
   private client: Client;
@@ -17,7 +17,7 @@ export class CommandHandler {
   // Регистрация команд на старте
   public async registerCommands() {
     for (const command of this.commands) {
-      this.client.application?.commands.create(command.getCommand())
+      this.client.application?.commands.create(command.getCommand());
     }
   }
 
@@ -31,7 +31,7 @@ export class CommandHandler {
       if (command.getName() !== interaction.commandName) continue;
 
       await command.execute(interaction);
-      return
+      return;
     }
 
     await interaction.reply(language.get("discord.error.message.command_not_found"));

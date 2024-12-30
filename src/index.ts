@@ -1,6 +1,6 @@
-import { PtcordManager } from "./ptcordManager";
-import { BotManager } from "./discord/BotManager";
-import { config as botConfig } from "./config/botConfig";
+import {PtcordManager} from "./ptcordManager";
+import {BotManager} from "./discord/BotManager";
+import {config as botConfig} from "./config/botConfig";
 
 class Ptcord {
   private readonly managers: Array<PtcordManager>;
@@ -10,7 +10,7 @@ class Ptcord {
     this.botManager = new BotManager();
 
     this.managers = [];
-    this.managers.push( this.botManager )
+    this.managers.push(this.botManager);
   }
 
   start(): void {
@@ -18,7 +18,7 @@ class Ptcord {
       manager.enable();
     }
 
-    this.botManager.client.login(botConfig.token)
+    this.botManager.client.login(botConfig.token);
   }
 }
 
