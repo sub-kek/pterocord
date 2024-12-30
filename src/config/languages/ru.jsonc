@@ -11,9 +11,22 @@
       "get_servers": {
         "description": "Получить список серверов.",
         "message": {
-          "status": "ЦП: ${cpuUsage}/${cpuTotal}%  ||  ОЗУ: ${memUsage}/${memTotal}МБ\n",
+          "field": {
+            "cpu": {
+              "name": "Использование ЦП:",
+              "value": "${cpuUsage}/${cpuTotal}%"
+            },
+            "mem": {
+              "name": "Использование ОЗУ:",
+              "value": "${memUsage}/${memTotal}МБ"
+            },
+            "uptime": {
+              "name": "Аптайм:",
+              "value": "${uptime}"
+            }
+          },
           "suspended": "Приостановлен.",
-          "footer": "id: ${serverId}"
+          "footer": "id: ${serverId} node: ${node}"
         }
       }
     },
