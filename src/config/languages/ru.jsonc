@@ -1,0 +1,25 @@
+{
+  "server": {
+    "serverStatus": "Статус сервера",
+    "cpuUsage": "Загрузка просессора",
+    "memUsage": "Использование RAM",
+    // КОМЕНТАРИЙ УХУ
+    "serverRunning": "Время работы"
+  },
+  "discord": {
+    "command": {
+      "ping": {
+        "description": "Проверка задержки бота.",
+        "message": {
+          "testing": "Тестирование задержки...",
+          "result": "Задержка: ${execTime}мс"
+        }
+      }
+    },
+    "error": {
+      "message": {
+        "command_not_found": "Команда не найдена."
+      }
+    }
+  }
+}
